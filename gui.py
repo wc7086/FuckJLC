@@ -2,6 +2,7 @@ import json, os, re, shutil, sys
 import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog
+import windnd
 
 # 创建主窗口
 root = tk.Tk()
@@ -22,6 +23,11 @@ root.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
 
 # 禁止窗口的宽度和高度调整（固定窗口大小）
 root.resizable(False, False)
+
+# 文件拖放
+def dragged_files(folder_path):
+    input_entry.delete(0, tk.END)
+    input_entry.insert(0, folder_path[0])
 
 # 配置所有列的权重为1，使其可以扩展
 for col in range(3):
@@ -205,6 +211,8 @@ output_text.grid(row=4, column=0, columnspan=3, sticky="ew")
 copy_config_to_current_dir()
 
 load_config()
+
+windnd.hook_dropfiles(root, func=dragged_files)
 
 # 运行主循环
 root.mainloop()
