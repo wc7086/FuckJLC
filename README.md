@@ -27,9 +27,9 @@ python modify.py
 
 ## GUI版本`gui.py`
 
-- 下载发行版本中的`FKJLC.zip`解压后直接运行，有概率误报
+1. 下载 [Release](https://github.com/wc7086/fuckself/releases) 中的 [FKJLC_win-x64.zip](https://github.com/wc7086/fuckself/releases/download/v0.1.0/FKJLC_win-x64.zip) 解压后直接运行，有概率误报
 
-- 运行目录中的`gui.py`
+2. 运行目录中的`gui.py`
 
 ```shell
 pip install json
